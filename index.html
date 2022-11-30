@@ -4,7 +4,22 @@
   </head>
   <body>
     <video
-      src="https://testcloudfront101.s3.ap-south-1.amazonaws.com/MSIN0097_Individual_Assignment_Guidelines.mp4"
+      src="https://uploadmovies-dev03604-dev.s3.ap-south-1.amazonaws.com/public/Elephants-Dream-The-Blender-Foundation.mp4"
     ></video>
+    <p id="data"></p>
+    <script>
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow",
+      };
+
+      fetch(
+        "https://uploadmovies-dev03604-dev.s3.ap-south-1.amazonaws.com/public/Elephants-Dream-The-Blender-Foundation.mp4",
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => (document.getElementById("data").innerHTML = result))
+        .catch((error) => console.log("error", error));
+    </script>
   </body>
 </html>
